@@ -1,0 +1,6 @@
+username=user
+password=secret
+
+contacts:
+joe, 123456789
+jane, 987654321
