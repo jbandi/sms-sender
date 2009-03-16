@@ -31,7 +31,8 @@ frame = swing.frame(title: 'SMS-automation.Sender') {
         }
         textArea(id: "text", constraints: BL.CENTER, columns: 10, rows: 3, caretUpdate: {event -> swing.len.text = event.source.text.length()})
         panel(constraints: BL.SOUTH, layout: new BL()) {
-          button(constraints: BL.WEST, text: 'Get State', actionPerformed: {swing.log.text += scraper.getRemainingUnits()})
+          button(constraints: BL.WEST, text: 'Account', actionPerformed: {swing.log.text += scraper.getRemainingUnits()})
+          button( text: 'Remaining', actionPerformed: {swing.log.text += sender.getRemainingFreeSms()})
           button(constraints: BL.EAST, text: 'Send', actionPerformed: { sender.sendSms(swing.number.text, swing.text.text) })
         }
       }
