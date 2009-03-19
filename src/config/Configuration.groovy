@@ -5,7 +5,7 @@ class Configuration {
 
   String username
   String password
-  def contacts
+  List contacts
 
   public void init(String cfgFilePath) {
     def cfgFile = new File(cfgFilePath)

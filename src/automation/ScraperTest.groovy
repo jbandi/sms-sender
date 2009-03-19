@@ -1,12 +1,18 @@
-import automation.Scraper
+package automation
+
 import config.Configuration
-import automation.Sender
 
-def config = new Configuration()
-config.init("configuration.txt")
 
-//def scraper = new Scraper(config)
-//scraper.getRemainingUnits()
+public class ScraperTest extends GroovyTestCase{
 
-def sender = new Sender(config)
-println sender.getRemainingFreeSms()
+  void test_scraping_remaining_free_sms_should_return_valid_string(){
+    def config = new Configuration()
+    config.init("configuration.txt")
+
+    def sender = new Sender(config)
+    def resultString = sender.getRemainingFreeSms()
+
+    assertTrue(resultString.startsWith("This month, you can still send"))
+    resultString.endsWith("free SMS.")
+  }
+}
